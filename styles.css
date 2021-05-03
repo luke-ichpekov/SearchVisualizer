@@ -1,0 +1,42 @@
+#algoSection .singleArrayElement{
+    margin-right: 10px;
+} 
+
+#selectMenu option{
+    border-radius: 20px;
+
+}
+
+#error-text-div{
+    display: none;
+}
+
+
+.singleArrayElement .valueOfArrayElement{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 8px; 
+    border: 2px solid gray;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.singleArrayElement #animatingThis{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 8px; 
+    background-color: green;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 12px;
+    
+}
+
+.singleArrayElement .indexOfArrayElement {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}

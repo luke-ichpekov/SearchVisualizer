@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Search Visualizer</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/algorithm-6-122160.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/algorithm-6-122160.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/algorithm-6-122160.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/algorithm-6-122160.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/algorithm-6-122160.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Blue.css">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="border-radius: 17px;border-color: rgba(33,37,41,0);background: #7212ff;color: rgb(33, 37, 41);">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: linear-gradient(120deg, #7f70f5 0%, #0ea0ff), #2597fd;">
+        <div class="container"><a class="navbar-brand" href="index.html" style="font-size: 23px;color: rgb(255,255,255);">Search Visualizer</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" style="font-size: 18px;border-color: rgb(0,0,0);color: #ffffff;" target="_blank" href="https://github.com/luke-ichpekov"><i class="fa fa-github" style="font-size: 18px;"></i>&nbsp;Github</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UCQWdm6vg20l5JitwJTJDuUQ" style="font-size: 18px;border-color: rgb(0,0,0);color: rgb(255,255,255);" target="_blank"><i class="fa fa-youtube-play" style="font-size: 18px;"></i>&nbsp;Youtube</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/luke-ichpekov-589b1b1b0/" style="font-size: 18px;border-color: rgb(0,0,0);color: rgb(255,255,255);" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 18px;"></i>&nbsp;Linkedin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:luke.ichpekov@gmail.com" style="font-size: 18px;border-color: rgb(0,0,0);color: rgb(255,255,255);" target="_blank"><i class="fa fa-envelope" style="font-size: 18px;"></i>&nbsp;Email</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 15px;">
+        <div class="row">
+            <div class="col-md-3 text-center" style="text-align: center;padding-top: 15px;padding-bottom: 15px; display: flex; justify-content: center;align-items: center;">
+                <input id="targetNumID" type="number" placeholder="target number" style="outline: none; text-align: center; font-size: 16px;border-radius: 28px;height: 40px;width: 150px;border-width: 0px;background: rgb(255, 255, 255);color: rgb(0,0,0);">
+            </div>
+            <div class="col-md-3" style="text-align: center;padding-top: 15px;padding-bottom: 15px; display: flex; justify-content: center;align-items: center;">
+                <select style="border-radius: 28px;outline: none; text-align: center; font-size: 16px;height: 40px;width: 150px;" id="selectMenu">
+                    <option value="Linear Search" selected>Linear Search</option>
+                    <option value="Binary Search">Binary Search</option>
+                    <option value="Exponential Search">Exponential Search</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3" style="text-align: center;padding-top: 15px;padding-bottom: 15px; display: flex; justify-content: center;align-items: center;">
+               <input type="range" style="outline: none; text-align: center; font-size: 16px;height: 40px;width: 150px;text-align: center;color: rgb(255,255,255);" min="5" max="99" value="25" step="2" id="rangeID"><output id="outputID" style="margin: 10px; text-align: center;color: white;"></output>
+            </div>
+            <div class="col-md-3 text-center align-self-center" style="text-align: center;padding-top: 15px;padding-bottom: 15px; display: flex; justify-content: center;align-items: center;"><button class="btn btn-primary" type="button" onclick="startClicked()" style="border-radius: 28px;outline: none; text-align: center; font-size: 16px;height: 40px;width: 150px;background-color: white; color: black; border: none;">Start</button></div>
+        </div>
+    </div>
+    <div class="container" id="error-text-div" style="padding:10px; text-align: center;"><h4 id="errorTextToAdd" style="color:white"></h4></div>
+    <div class="container" style="background-color: oldlace;border-radius: 25px; padding: 15px; display: flex;flex-flow: wrap; justify-content: center;align-items: center; flex-direction: row;margin-top: 20px;" id="algoSection">
+        
+        
+
+        
+      
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
