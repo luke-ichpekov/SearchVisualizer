@@ -52,7 +52,7 @@ function startClicked(){
     targetNum = document.getElementById('targetNumID').value
     console.log(startClickable)
     if(targetNum == ""){
-        alert('no num entered')
+        NoNumEnteredText()
         return
     }
     if(startClickable == false){
@@ -433,4 +433,11 @@ function showErrorText(){
 function clearErrorText(){
     let errorTextDiv = document.getElementById('error-text-div')
     errorTextDiv.style.display ="none"
+}
+
+function NoNumEnteredText(){
+    let errorTextDiv = document.getElementById('error-text-div')
+    let thingToAddTextTo = document.getElementById('errorTextToAdd')
+    errorTextDiv.style.display ="block"
+    thingToAddTextTo.innerHTML = "No number was entered"
 }
